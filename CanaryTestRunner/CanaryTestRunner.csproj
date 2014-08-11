@@ -35,6 +35,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CanaryTestAttribute.cs" />
     <Compile Include="CanaryTestOutput.cs" />
     <Compile Include="TestRunner.cs" />
     <Compile Include="ICanaryTest.cs" />

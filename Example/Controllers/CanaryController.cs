@@ -18,6 +18,5 @@ namespace Example.Controllers
             var canaryTestOutput = _canaryTestRunner.RunAllTests();
             return View(canaryTestOutput);
         }
-
     }
 }

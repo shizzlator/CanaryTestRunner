@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CanaryTestRunner
 {
@@ -72,9 +69,5 @@ namespace CanaryTestRunner
             }
             return canaryTestOutput;
         }
-    }
-
-    public class CanaryTestAttribute : Attribute
-    {
     }
 }
