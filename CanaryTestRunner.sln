@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanaryTestRunner", "CanaryTestRunner\CanaryTestRunner.csproj", "{D89ED97B-3DA9-4577-9B75-DDD8E43AC397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{28F12793-0747-4EE0-B2C2-8680F965F2B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D89ED97B-3DA9-4577-9B75-DDD8E43AC397}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D89ED97B-3DA9-4577-9B75-DDD8E43AC397}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D89ED97B-3DA9-4577-9B75-DDD8E43AC397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F12793-0747-4EE0-B2C2-8680F965F2B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F12793-0747-4EE0-B2C2-8680F965F2B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F12793-0747-4EE0-B2C2-8680F965F2B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F12793-0747-4EE0-B2C2-8680F965F2B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,22 @@
+﻿@model CanaryTestRunner.CanaryTestOutput
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <div>
+              @foreach (var test in Model.Results)
+              {
+                  <div>@test.Message</div>
+              }
+            <div>@Model.TotalResult</div>
+        </div>
+    </body>
+</html>

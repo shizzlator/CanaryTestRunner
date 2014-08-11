@@ -36,7 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CanaryTestOutput.cs" />
-    <Compile Include="CanaryTestRunner.cs" />
+    <Compile Include="TestRunner.cs" />
     <Compile Include="ICanaryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />

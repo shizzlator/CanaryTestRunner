@@ -1,24 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CanaryTestRunner
 {
-    public interface ICanaryTestRunner
+    public interface ITestRunner
     {
         CanaryTestOutput RunAllTests();
         void RegisterTests(params ICanaryTest[] canaryTests);
-        CanaryTestRunner RegisterTest(ICanaryTest canaryTest);
+        TestRunner RegisterTest(ICanaryTest canaryTest);
     }
 
-    public class CanaryTestRunner : ICanaryTestRunner
+    public class TestRunner : ITestRunner
     {
         private readonly IList<ICanaryTest> _canaryTestCollection;
 
-        public CanaryTestRunner()
+        public TestRunner()
         {
             _canaryTestCollection = new List<ICanaryTest>();
+            foreach (var testType in GetTypesWith<CanaryTestAttribute>(false))
+            {
+                _canaryTestCollection.Add((ICanaryTest)Activator.CreateInstance(testType));
+            }
         }
 
-        public CanaryTestRunner RegisterTest(ICanaryTest canaryTest)
+        private static IEnumerable<Type> GetTypesWith<TAttribute>(bool inherit) where TAttribute : Attribute
+        {
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+                foreach (var type in assembly.GetTypes())
+                {
+                    if (type.IsDefined(typeof (TAttribute), inherit)) yield return type;
+                }
+        }
+
+        public TestRunner RegisterTest(ICanaryTest canaryTest)
         {
             _canaryTestCollection.Add(canaryTest);
             return this;
@@ -55,5 +72,9 @@ namespace CanaryTestRunner
             }
             return canaryTestOutput;
         }
+    }
+
+    public class CanaryTestAttribute : Attribute
+    {
     }
 }
